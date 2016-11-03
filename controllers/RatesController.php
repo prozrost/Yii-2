@@ -14,12 +14,29 @@ class RatesController extends Controller
         $blackMarketData = $model->getBlackMarketRate();
         $avgUSA = ($privatData[2]["buy"] + $nbuData[14]["rate"] + $mejData[0]["Buy"] + $blackMarketData[0]["Buy"] +
         $privatData[2]["sale"] + $nbuData[14]["rate"] + $mejData[0]["Sale"] + $blackMarketData[0]["Sale"])/8;
+
         $avgEuro = ($privatData[0]["buy"] + $nbuData[23]["rate"] + $mejData[1]["Buy"] + $blackMarketData[1]["Buy"] +
         $privatData[0]["sale"] + $nbuData[23]["rate"] + $mejData[1]["Sale"] + $blackMarketData[1]["Sale"])/8;
+
         $avgRUR = ($privatData[1]["buy"] + $nbuData[28]["rate"] + $mejData[2]["Buy"] + $blackMarketData[2]["Buy"] +
         $privatData[1]["sale"] + $nbuData[28]["rate"] + $mejData[2]["Sale"] + $blackMarketData[2]["Sale"])/8;
 
-        return $this->render('index',['privatdata' => $privatData, 'nbudata' => $nbuData,'mejdata'=>$mejData,'blackdata' => $blackMarketData, 'avgUSA'=>$avgUSA, 'type'=>$type, 'avgEuro' => $avgEuro,'avgRUR' => $avgRUR]);
+        if($type == 'USA') {
+            $exchangeData = array('privatBuy' => $privatData[2]["buy"], 'privateSale'=>$privatData[2]["sale"], 'nbuRate' => $nbuData[14]['rate'],
+            'mejBuy' => $mejData[0]["Buy"],'mejSale' => $mejData[0]["Sale"],'blackBuy' => $blackMarketData[0]["Buy"],'blackSale' => $blackMarketData[0]["Sale"]);
+            $avgSum = $avgUSA;
+        }
+        elseif($type == 'Euro') {
+            $exchangeData = array('privatBuy' => $privatData[0]["buy"], 'privateSale' => $privatData[0]["sale"], 'nbuRate' => $nbuData[23]['rate'],
+            'mejBuy' => $mejData[1]["Buy"],'mejSale' => $mejData[1]["Sale"],'blackBuy' => $blackMarketData[1]["Buy"],'blackSale' => $blackMarketData[1]["Sale"]);
+            $avgSum = $avgEuro;
+        }
+        elseif($type == 'RUR'){
+            $exchangeData = array('privatBuy' => $privatData[1]["buy"], 'privateSale'=> $privatData[1]["sale"], 'nbuRate' => $nbuData[28]['rate'],
+            'mejBuy' => $mejData[2]["Buy"],'mejSale' => $mejData[2]["Sale"],'blackBuy' => $blackMarketData[2]["Buy"],'blackSale' => $blackMarketData[2]["Sale"]);
+            $avgSum = $avgRUR;
+        }
+        return $this->render('index',['exchangeData' => $exchangeData, 'avgSum'=>$avgSum]);
     }
 }
  ?>

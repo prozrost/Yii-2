@@ -20,74 +20,29 @@ $this->title = 'Курс валют';
         <h4>МежБанк</h4>
         <h4>Черный рынок</h4>
     </div>
-    <?php if($type == 'USA') {?>
-    <div class="main_wrap">
-        <div class="buy">
-            <h3> Покупка </h3>
-            <p><?php print_r($privatdata[2]["buy"])?></p>
-            <p><?php print_r($nbudata[14]["rate"])?></p>
-            <p><?php print_r($mejdata[0]["Buy"])?></p>
-            <p><?php print_r($blackdata[0]["Buy"])?></p>
-        </div>
-        <div class="sale">
-            <h3> Продажа </h3>
-            <p><?php print_r($privatdata[2]["sale"])?></p>
-            <p><?php print_r($nbudata[14]["rate"])?></p>
-            <p><?php print_r($mejdata[0]["Sale"])?></p>
-            <p><?php print_r($blackdata[0]["Sale"])?></p>
-        </div>
-        <div class="avg_rate">
-            <h3>Средний курс на сегодня:</h3>
-            <?php print_r($avgUSA)?>
-        </div>
-    </div>
-    <?php }?>
 
-    <?php if($type == 'RUR') { ?>
     <div class="main_wrap">
         <div class="buy">
             <h3> Покупка </h3>
-            <p><?php print_r($privatdata[1]["buy"])?></p>
-            <p><?php print_r($nbudata[28]["rate"])?></p>
-            <p><?php print_r($mejdata[2]["Buy"])?></p>
-            <p><?php print_r($blackdata[2]["Buy"])?></p>
+            <p><?php print_r($exchangeData["privatBuy"])?></p>
+            <p><?php print_r($exchangeData["nbuRate"])?></p>
+            <p><?php print_r($exchangeData["mejBuy"])?></p>
+            <p><?php print_r($exchangeData["blackBuy"])?></p>
         </div>
         <div class="sale">
             <h3> Продажа </h3>
-            <p><?php print_r($privatdata[1]["sale"])?></p>
-            <p><?php print_r($nbudata[28]["rate"])?></p>
-            <p><?php print_r($mejdata[2]["Sale"])?></p>
-            <p><?php print_r($blackdata[2]["Sale"])?></p>
+            <p><?php print_r($exchangeData["privateSale"])?></p>
+            <p><?php print_r($exchangeData["nbuRate"])?></p>
+            <p><?php print_r($exchangeData["mejSale"])?></p>
+            <p><?php print_r($exchangeData["blackSale"])?></p>
         </div>
         <div class="avg_rate">
             <h3>Средний курс на сегодня:</h3>
-            <?php print_r($avgRUR)?>
+            <?php print_r($avgSum)?>
         </div>
     </div>
-        <?php }?>
+    
 
-<?php if($type == 'Euro') { ?>
-    <div class="main_wrap">
-        <div class="buy">
-            <h3> Покупка </h3>
-            <p><?php print_r($privatdata[0]["buy"])?></p>
-            <p><?php print_r($nbudata[23]["rate"])?></p>
-            <p><?php print_r($mejdata[1]["Buy"])?></p>
-            <p><?php print_r($blackdata[1]["Buy"])?></p>
-        </div>
-        <div class="sale">
-            <h3> Продажа </h3>
-            <p><?php print_r($privatdata[0]["sale"])?></p>
-            <p><?php print_r($nbudata[23]["rate"])?></p>
-            <p><?php print_r($mejdata[1]["Sale"])?></p>
-            <p><?php print_r($blackdata[1]["Sale"])?></p>
-        </div>
-        <div class="avg_rate">
-            <h3>Средний курс на сегодня:</h3>
-<?php print_r($avgEuro)?>
-        </div>
-    </div>
-    <?php }?>
 
 
 <style>
