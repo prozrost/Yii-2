@@ -46,45 +46,44 @@ $this->title = 'Курс валют';
 
 
 <style>
-body{
-    background-color: #3333cc;
-}
-.links {
-    display: block;
-    margin-left: 80%;
-    color:white;
-}
-div {
-    display: inline-block !important;
-    overflow: auto;
-    margin-left: 50px;
-    vertical-align: top;
-    color:white;
-}
-
-.avg_rate {
-    margin-left: 250px;
-    margin-top: 6%;
-}
-.avg_rate p{
-    display: inline-block;
-    font-size: 45px;
-    margin-left: 75px;
-    color: #ffff00;
-}
-.links a {
-    margin-left: 15px;
-    color:white;
-    border:1px solid white;
-    border-radius: 10px;
-    padding: 1px;
-    text-decoration: none;
-}
-.links a:active{
-    background-color: white;
-}
-.links a:hover{
-    background-color: white;
-    color:#3333cc;
-}
+    body {
+        background-color: #3333cc;
+    }
+    .links {
+        display: block;
+        margin-left: 80%;
+        color:white;
+    }
+    div {
+        display: inline-block !important;
+        overflow: auto;
+        margin-left: 50px;
+        vertical-align: top;
+        color:white;
+    }
+    .avg_rate {
+        margin-left: 250px;
+        margin-top: 6%;
+    }
+    .avg_rate p {
+        display: inline-block;
+        font-size: 45px;
+        margin-left: 75px;
+        color: #ffff00;
+    }
+    .links a {
+        margin-left: 15px;
+        color:white;
+        border:1px solid white;
+        border-radius: 10px;
+        padding: 1px;
+        text-decoration: none;
+    }
+    .links a:active {
+        background-color: white;
+    }
+    .links a:hover {
+        background-color: white;
+        color:#3333cc;
+    }
 </style>
